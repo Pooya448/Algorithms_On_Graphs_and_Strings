@@ -1,0 +1,10 @@
+C:\Users\Pooya\Documents\AD97982\A1\A1\obj\Debug\A1.csprojAssemblyReference.cache
+C:\Users\Pooya\Documents\AD97982\A1\A1\obj\Debug\A1.csproj.CoreCompileInputs.cache
+C:\Users\Pooya\Documents\AD97982\A1\A1\bin\Debug\A1.dll
+C:\Users\Pooya\Documents\AD97982\A1\A1\bin\Debug\A1.pdb
+C:\Users\Pooya\Documents\AD97982\A1\A1\bin\Debug\TestCommon.dll
+C:\Users\Pooya\Documents\AD97982\A1\A1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Pooya\Documents\AD97982\A1\A1\bin\Debug\TestCommon.pdb
+C:\Users\Pooya\Documents\AD97982\A1\A1\obj\Debug\A1.csproj.CopyComplete
+C:\Users\Pooya\Documents\AD97982\A1\A1\obj\Debug\A1.dll
+C:\Users\Pooya\Documents\AD97982\A1\A1\obj\Debug\A1.pdb
