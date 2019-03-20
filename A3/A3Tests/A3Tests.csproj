@@ -514,129 +514,129 @@
     <None Include="TestData\TD2\In_9.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="TestData\TD3\In_10.webgraphviz">
+    <Content Include="TestData\TD3\In_10.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_11.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_11.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_12.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_12.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_13.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_13.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_14.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_14.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_15.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_15.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_16.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_16.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_17.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_17.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_18.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_18.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_19.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_19.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_20.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_20.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_21.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_21.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_22.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_22.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_23.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_23.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_24.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_24.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_25.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_25.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_26.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_26.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_27.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_27.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_28.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_28.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_29.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_29.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_3.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_3.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_30.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_30.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_31.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_31.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_32.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_32.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_33.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_33.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_34.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_34.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_35.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_35.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_36.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_36.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_37.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_37.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_38.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_38.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_39.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_39.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_4.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_4.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_40.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_40.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_41.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_41.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_42.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_42.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_43.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_43.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_5.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_5.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_6.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_6.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_7.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_7.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_8.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_8.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="TestData\TD3\In_9.webgraphviz">
+    </Content>
+    <Content Include="TestData\TD3\In_9.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="TestData\TD4\In_10.webgraphviz">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
