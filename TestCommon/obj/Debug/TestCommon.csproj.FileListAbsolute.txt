@@ -1,8 +1,0 @@
-C:\Users\Pooya\Documents\AD97982\TestCommon\bin\Debug\TestCommon.dll
-C:\Users\Pooya\Documents\AD97982\TestCommon\bin\Debug\TestCommon.pdb
-C:\Users\Pooya\Documents\AD97982\TestCommon\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\Pooya\Documents\AD97982\TestCommon\obj\Debug\TestCommon.csprojAssemblyReference.cache
-C:\Users\Pooya\Documents\AD97982\TestCommon\obj\Debug\TestCommon.csproj.CoreCompileInputs.cache
-C:\Users\Pooya\Documents\AD97982\TestCommon\obj\Debug\TestCommon.csproj.CopyComplete
-C:\Users\Pooya\Documents\AD97982\TestCommon\obj\Debug\TestCommon.dll
-C:\Users\Pooya\Documents\AD97982\TestCommon\obj\Debug\TestCommon.pdb
