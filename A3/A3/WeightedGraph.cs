@@ -32,114 +32,7 @@ namespace A3
                 }
             }
         }
-        public int BidirectionalDijkstra(int s, int t)
-        {
-            if (s == t)
-            {
-                return 0;
-            }
-            int processCount = VertexCount;
-            // start and target for further checking
-            Vertex start = Vertices[s - 1];
-            Vertex target = Vertices[t - 1];
-
-            Vertex forward = Vertices[s - 1];
-            Vertex reverse = Vertices[t - 1];
-            if (!forward.Edges.Any())
-            {
-                Reset();
-                return -1;
-            }
-            forward.ForwardDist = 0;
-            reverse.ReverseDist = 0;
-            MinHeapFwd processFwd = new MinHeapFwd(10000);
-            MinHeapBwd processBwd = new MinHeapBwd(1000);
-            while (processCount > 0)
-            {
-                //fwd
-                BidirectionalRelax(forward, true);
-                processFwd.Update();
-                forward.ForwardCheck = true;
-                foreach (var e in forward.Edges)
-                {
-                    if (!e.ForwardCheck && !e.To.ForwardCheck)
-                    {
-
-                        processFwd.Add(e);
-                    }
-                }
-                if (forward.ForwardCheck && forward.ReverseCheck)
-                    break;
-                var minEdgeFwd = processFwd.Pop();
-
-                if (minEdgeFwd != null)
-                {
-                    minEdgeFwd.ForwardCheck = true;
-                    ProcessEdges.Add(minEdgeFwd);
-                    forward = minEdgeFwd.To;
-                }
-                if (forward == target)
-                {
-                    var r = forward.ForwardDist;
-                    Reset();
-                    return r;
-                }
-                if (forward == reverse)
-                {
-                    break;
-                }
-                //rev
-
-                BidirectionalRelax(reverse, false);
-                processBwd.Update();
-                reverse.ReverseCheck = true;
-                foreach (var e in reverse.EdgesTranspose)
-                    if (!e.ReverseCheck && !e.To.ReverseCheck)
-                    {
-                        processBwd.Add(e);
-                    }
-                if (reverse.ForwardCheck && reverse.ReverseCheck)
-                {
-                    break;
-                }
-
-                var minEdgeBwd = processBwd.Pop();
-                if (minEdgeBwd != null)
-                {
-                    minEdgeBwd.ReverseCheck = true;
-                    ProcessEdges.Add(minEdgeBwd);
-                    reverse = minEdgeBwd.To;
-                }
-                if (reverse == start)
-                {
-                    var r = reverse.ReverseDist;
-                    Reset();
-                    return r;
-                }
-                if (forward == reverse)
-                {
-                    break;
-                }
-                processCount--;
-                if (processCount == 0)
-                {
-                    Reset();
-                    return -1;
-                }
-            }
-            int shortestLength = Infinity;
-            foreach (var vertex in ProcessVertices)
-            {
-                if (vertex.ReverseDist != Infinity && vertex.ForwardDist != Infinity && vertex.ReverseDist + vertex.ForwardDist < shortestLength)
-                {
-                    shortestLength = vertex.ReverseDist + vertex.ForwardDist;
-                }
-            }
-            Reset();
-            return shortestLength;
-        }
-
-
+        
         public void Dijkstra(Vertex start, Vertex target)
         {
             int processCount = VertexCount;
@@ -163,25 +56,6 @@ namespace A3
                 processCount--;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public int ShortestPath (int s, int t)
         {
             Dijkstra(Vertices[s - 1], Vertices[t - 1]);
@@ -306,28 +180,7 @@ namespace A3
                 if (!edge.Check)
                     edge.To.Dist = v.Dist + edge.Weight < edge.To.Dist ? v.Dist + edge.Weight : edge.To.Dist;
         }
-
-        //public int BiDijkstra(int s, int t)
-        //{
-        //    if (s == t)
-        //    {
-        //        return 0;
-        //    }
-        //    int processCount = VertexCount;
-        //    start and target for further checking
-
-        //   var start = Vertices[s - 1].Id;
-        //    var target = Vertices[t - 1].Id;
-
-        //    Vertex forward = Vertices[s - 1];
-        //    Vertex reverse = Vertices[t - 1];
-        //    if (!forward.Edges.Any())
-        //    {
-        //        Reset();
-        //        return -1;
-        //    }
-
-        //}
+        
         private void BidirectionalRelax(Vertex v, bool isForward)
         {
             if (isForward)
