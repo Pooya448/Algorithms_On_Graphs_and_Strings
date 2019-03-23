@@ -50,7 +50,7 @@
     <Compile Include="Q5StronglyConnected.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TestCommon\TestCommon.csproj">
+    <ProjectReference Include="..\..\Common\TestCommon\TestCommon.csproj">
       <Project>{c39ff0c4-6960-42ad-8e2c-d2cafe850a52}</Project>
       <Name>TestCommon</Name>
     </ProjectReference>

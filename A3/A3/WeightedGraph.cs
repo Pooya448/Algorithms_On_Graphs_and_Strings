@@ -12,13 +12,9 @@ namespace A3
         public const int Infinity = 2_000_000_000;
         public List<Vertex> Vertices { get; set; }
         public int VertexCount { get; set; }
-        public List<Vertex> ProcessVertices { get; set; }
-        public List<Edge> ProcessEdges { get; set; }
 
         public WeightedGraph(long nodeCount, long[][] edges, bool isBiDirectional = false)
         {
-            ProcessEdges = new List<Edge>();
-            ProcessVertices = new List<Vertex>();
             Vertices = new List<Vertex>();
             VertexCount = (int)nodeCount;
             for (int i = 1; i <= VertexCount; i++)
@@ -30,30 +26,6 @@ namespace A3
                 {
                     Vertices[(int)edges[i][1] - 1].EdgesTranspose.Add(new Edge(Vertices[(int)edges[i][1] - 1], Vertices[(int)edges[i][0] - 1], (int)edges[i][2]));
                 }
-            }
-        }
-        
-        public void Dijkstra(Vertex start, Vertex target)
-        {
-            int processCount = VertexCount;
-            start.Dist = 0;
-            Vertex currentVertex = start;
-            List<Edge> process = new List<Edge>();
-            while (processCount > 0)
-            {
-                if (currentVertex.Id == target.Id)
-                    return;
-                Relax(currentVertex);
-                currentVertex.Check = true;
-                foreach (var e in currentVertex.Edges)
-                    process.Add(e);
-                var minEdge = process.Where(e => !e.Check && !e.To.Check).OrderBy(x => x.To.Dist).FirstOrDefault();
-                if (minEdge != null)
-                {
-                    minEdge.Check = true;
-                    currentVertex = minEdge.To;
-                }
-                processCount--;
             }
         }
         public int ShortestPath (int s, int t)
@@ -154,59 +126,139 @@ namespace A3
             }
             return res;
         }
-        public void Reset()
-        {
-            foreach (var v in ProcessVertices)
-            {
-                v.Check = false;
-                v.ForwardCheck = false;
-                v.ReverseCheck = false;
-                v.ForwardDist = Infinity;
-                v.ReverseDist = Infinity;
-            }
-            foreach (var e in ProcessEdges)
-            {
-                e.ForwardCheck = false;
-                e.ReverseCheck = false;
-                e.Check = false;
-            }
-            ProcessEdges = new List<Edge>();
-            ProcessVertices = new List<Vertex>();
-            return;
-        }
         private void Relax(Vertex v)
         {
             foreach (var edge in v.Edges)
                 if (!edge.Check)
                     edge.To.Dist = v.Dist + edge.Weight < edge.To.Dist ? v.Dist + edge.Weight : edge.To.Dist;
         }
-        
-        private void BidirectionalRelax(Vertex v, bool isForward)
+        public void Dijkstra(Vertex start, Vertex target)
         {
-            if (isForward)
+            int processCount = VertexCount;
+            start.Dist = 0;
+            Vertex currentVertex = start;
+            List<Edge> process = new List<Edge>();
+            while (processCount > 0)
             {
-                foreach (var edge in v.Edges)
+                if (currentVertex.Id == target.Id)
+                    return;
+                Relax(currentVertex);
+                currentVertex.Check = true;
+                foreach (var e in currentVertex.Edges)
+                    process.Add(e);
+                var minEdge = process.Where(e => !e.Check && !e.To.Check).OrderBy(x => x.To.Dist).FirstOrDefault();
+                if (minEdge != null)
                 {
-                    if (!edge.ForwardCheck && v.ForwardDist + edge.Weight < edge.To.ForwardDist )
+                    minEdge.Check = true;
+                    currentVertex = minEdge.To;
+                }
+                processCount--;
+            }
+        }
+        public int BiDijkstra (int s, int t)
+        {
+            if (s == t)
+            {
+                return 0;
+            }
+            int processCount = VertexCount;
+            var start = Vertices[s - 1];
+            var target = Vertices[t - 1];
+            if (!start.Edges.Any())
+            {
+                return -1;
+            }
+            var forwardPivot = start;
+            var backwardPivot = target;
+            forwardPivot.ForwardDist = 0;
+            backwardPivot.BackwardDist = 0;
+
+            PriorityQueue fwdQueue = new PriorityQueue(true,3200);
+            PriorityQueue bwdQueue = new PriorityQueue(false,3200);
+
+            while (processCount > 0)
+            {
+                // Forward Dijkstra
+                forwardPivot.ForwardCheck = true;
+                if (forwardPivot.Id == target.Id)
+                {
+                    var r = forwardPivot.ForwardDist;
+                    foreach (var v in Vertices)
+                        Reset(v);
+                    return r;
+                }
+                if (forwardPivot.BackwardCheck)
+                    break;
+
+                foreach (var edge in forwardPivot.Edges)
+                {
+                    if (!edge.To.ForwardCheck && forwardPivot.ForwardDist + edge.Weight < edge.To.ForwardDist)
                     {
-                        edge.To.ForwardDist = v.ForwardDist + edge.Weight;
-                        ProcessVertices.Add(edge.To);
+                        edge.To.ForwardDist = forwardPivot.ForwardDist + edge.Weight;
+                        if (edge.To.FwdIndex >= 0)
+                            fwdQueue.ChangePriority(edge.To, edge.To.ForwardDist);
+                        else
+                            fwdQueue.Add(edge.To, edge.To.ForwardDist);
                     }
                 }
-            }
-            else
-            {
-                foreach (var edge in v.EdgesTranspose)
+                var nextFwdPivot = fwdQueue.ExtraxtMin();
+                if (nextFwdPivot != null)
                 {
-                    if (!edge.ReverseCheck && v.ReverseDist + edge.Weight < edge.To.ReverseDist)
+                    forwardPivot = nextFwdPivot;
+                }
+                // Backward Dijkstra
+                backwardPivot.BackwardCheck = true;
+                if (backwardPivot.Id == start.Id)
+                {
+                    var r = backwardPivot.BackwardDist;
+                    foreach (var v in Vertices)
+                        Reset(v);
+                    return r;
+                }
+                if (backwardPivot.ForwardCheck)
+                    break;
+                foreach (var edge in backwardPivot.EdgesTranspose)
+                {
+                    if (!edge.To.BackwardCheck && backwardPivot.BackwardDist + edge.Weight < edge.To.BackwardDist)
                     {
-                        edge.To.ReverseDist = v.ReverseDist + edge.Weight;
-                        ProcessVertices.Add(edge.To);
+                        edge.To.BackwardDist = backwardPivot.BackwardDist + edge.Weight;
+                        if (edge.To.BwdIndex >= 0)
+                            bwdQueue.ChangePriority(edge.To, edge.To.BackwardDist);
+                        else
+                            bwdQueue.Add(edge.To, edge.To.BackwardDist);
                     }
                 }
+                var nextBwdPivot = bwdQueue.ExtraxtMin();
+                if (nextBwdPivot != null)
+                    backwardPivot = nextBwdPivot;
+                // Finishing Conditions
+                if (--processCount == 0)
+                {
+                    foreach (var v in Vertices)
+                        Reset(v);
+                    return -1;
+                }
             }
+            int shortestLength = Infinity;
+            foreach (var vertex in Vertices)
+            {
+                if (vertex.BackwardDist != Infinity &&
+                    vertex.ForwardDist != Infinity &&
+                    vertex.BackwardDist + vertex.ForwardDist < shortestLength)
+                    shortestLength = vertex.BackwardDist + vertex.ForwardDist;
+                Reset(vertex);
+            }
+            return shortestLength;
+        }
+        public void Reset(Vertex vertex)
+        {
+            vertex.FwdIndex = -1;
+            vertex.BwdIndex = -1;
+            vertex.ForwardCheck = false;
+            vertex.BackwardCheck = false;
+            vertex.BackwardDist = Infinity;
+            vertex.ForwardDist = Infinity;
             return;
-            
         }
     }
 

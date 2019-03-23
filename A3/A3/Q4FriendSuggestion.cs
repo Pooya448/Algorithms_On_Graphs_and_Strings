@@ -18,22 +18,18 @@ namespace A3
                               long[][] edges, long QueriesCount, 
                               long[][]Queries)
         {
-            //Dictionary<long[], long> resDict = new Dictionary<long[], long>();
-            //long[] result = new long[QueriesCount];
-            //for (int i = 0; i < QueriesCount; i++)
-            //{
-            //    if (resDict.ContainsKey(Queries[i]))
-            //    {
-            //        result[i] = resDict[Queries[i]];
-            //    }
-            //    else
-            //    {
-            //        resDict[Queries[i]] = g.BidirectionalDijkstra((int)Queries[i][0], (int)Queries[i][1]);
-            //        result[i] = resDict[Queries[i]];
-            //    }
-            //}
-            
-            return new long[] { };
+            Dictionary<long[], long> resDict = new Dictionary<long[], long>();
+            long[] result = new long[QueriesCount];
+            WeightedGraph g = new WeightedGraph(NodeCount, edges,true);
+            for (int i = 0; i < QueriesCount; i++)
+                if (resDict.ContainsKey(Queries[i]))
+                    result[i] = resDict[Queries[i]];
+                else
+                {
+                    resDict[Queries[i]] = g.BiDijkstra((int)Queries[i][0], (int)Queries[i][1]);
+                    result[i] = resDict[Queries[i]];
+                }
+            return result;
         }
     }
 }
