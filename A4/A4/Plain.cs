@@ -37,9 +37,9 @@ namespace A4
             while (processCount > 0)
             {
                 Relax(currentPoint);
-                currentPoint.InMST = true;
+                currentPoint.Check = true;
                 foreach (var p in currentPoint.ConnectedPoints)
-                    if (!p.InMST && !p.IsInQueue)
+                    if (!p.Check && !p.IsInQueue)
                     {
                         process.Add(p);
                         p.IsInQueue = true;
@@ -58,7 +58,7 @@ namespace A4
         private void Relax(Point p)
         {
             foreach (var point in p.ConnectedPoints)
-                if (!point.InMST && point.Dist > CalcDistance(p, point))
+                if (!point.Check && point.Dist > CalcDistance(p, point))
                 {
                     point.Dist = CalcDistance(p, point);
                     point.Prev = p;

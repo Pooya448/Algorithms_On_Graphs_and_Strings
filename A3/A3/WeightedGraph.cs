@@ -12,13 +12,9 @@ namespace A3
         public const int Infinity = 2_000_000_000;
         public List<Vertex> Vertices { get; set; }
         public int VertexCount { get; set; }
-        public List<Vertex> ProcessVertices { get; set; }
-        public List<Edge> ProcessEdges { get; set; }
 
         public WeightedGraph(long nodeCount, long[][] edges, bool isBiDirectional = false)
         {
-            ProcessEdges = new List<Edge>();
-            ProcessVertices = new List<Vertex>();
             Vertices = new List<Vertex>();
             VertexCount = (int)nodeCount;
             for (int i = 1; i <= VertexCount; i++)

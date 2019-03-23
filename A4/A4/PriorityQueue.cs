@@ -6,47 +6,50 @@ using System.Threading.Tasks;
 
 namespace A4
 {
-    public class Entity<T> where T : class
+    public class Entity
     {
-        public T Item { get; set; }
+        public Point Item { get; set; }
         public double Priority { get; set; }
-        public Entity(T item, double priority)
+        public Entity(Point item, double priority)
         {
             Item = item;
             Priority = priority;
         }
     }
-    public class PriorityQueue<T> where T : class
+    public class PriorityQueue
     {
-        public Entity<T>[] Elements { get; set; }
+        public Entity[] Elements { get; set; }
         public int Cursor { get; set; }
 
         public PriorityQueue(int size = 1000)
         {
-            Elements = new Entity<T>[size];
+            Elements = new Entity[size];
             Cursor = 0;
         }
         private void Swap(int firstIndex, int secondIndex)
         {
+            
+            Elements[firstIndex].Item.Index = secondIndex;
+            Elements[secondIndex].Item.Index = firstIndex;
+            
             var temp = Elements[firstIndex];
             Elements[firstIndex] = Elements[secondIndex];
             Elements[secondIndex] = temp;
         }
         public bool IsEmpty()
-        {
-            return Cursor == 0;
-        }
-        public Entity<T> Peek()
+            => Cursor == 0;
+
+        public Entity Peek()
         {
             if (Cursor == 0)
                 return null;
 
             return Elements[0];
         }
-        public void ChangePriority(T query,int newPriority)
+        public void ChangePriority(Point query,double newPriority)
         {
-            var index = FindIndex(query);
-            if (index != -1)
+            var index = query.Index;
+            if (index >= 0)
             {
                 var currentPriority = Elements[index].Priority;
                 Elements[index].Priority = newPriority;
@@ -57,29 +60,26 @@ namespace A4
             }
             return;
         }
-        public int FindIndex(T query)
+        public int FindIndex(Point query)
         {
             for (int i = 0; i < Cursor; i++)
-            {
                 if (Elements[i].Item == query)
-                {
                     return i;
-                }
-            }
             return -1;
         }
-        public Entity<T> ExtraxtMin()
+        public Point ExtraxtMin()
         {
             if (Cursor == 0)
                 return null;
-
+            Elements[0].Item.Index = -1;
             var result = Elements[0];
-            Elements[0] = Elements[Cursor - 1];
             Cursor--;
-
+            Elements[0] = Elements[Cursor];
+            Elements[Cursor] = null;
+            if (Elements[0] != null)
+                Elements[0].Item.Index = -1;
             SiftDown(0);
-
-            return result;
+            return result.Item;
         }
         private void SiftDown(int index)
         {
@@ -87,16 +87,13 @@ namespace A4
             {
                 var smallerIndex = GetLeftChildIndex(index);
                 if (HasRightChild(index) && GetRightChild(index).Priority < GetLeftChild(index).Priority)
-                {
                     smallerIndex = GetRightChildIndex(index);
-                }
                 if (Elements[smallerIndex].Priority >= Elements[index].Priority)
-                {
                     break;
-                }
                 Swap(smallerIndex, index);
                 index = smallerIndex;
             }
+            return;
         }
         private void SiftUp(int index)
         {
@@ -106,13 +103,15 @@ namespace A4
                 Swap(parentIndex, index);
                 index = parentIndex;
             }
+            return;
         }
-        public void Add(T query,double priority)
+        public void Add(Point query,double priority)
         {
-            var element = new Entity<T>(query,priority);
+            query.Index = Cursor;
+            var element = new Entity(query,priority);
             Elements[Cursor] = element;
+            SiftUp(Cursor);
             Cursor++;
-            SiftUp(Cursor - 1);
         }
 
         private int GetLeftChildIndex(int elementIndex) => 2 * elementIndex + 1;
@@ -123,8 +122,8 @@ namespace A4
         private bool HasRightChild(int elementIndex) => GetRightChildIndex(elementIndex) < Cursor;
         private bool IsRoot(int elementIndex) => elementIndex == 0;
 
-        private Entity<T> GetLeftChild(int elementIndex) => Elements[GetLeftChildIndex(elementIndex)];
-        private Entity<T> GetRightChild(int elementIndex) => Elements[GetRightChildIndex(elementIndex)];
-        private Entity<T> GetParent(int elementIndex) => Elements[GetParentIndex(elementIndex)];
+        private Entity GetLeftChild(int elementIndex) => Elements[GetLeftChildIndex(elementIndex)];
+        private Entity GetRightChild(int elementIndex) => Elements[GetRightChildIndex(elementIndex)];
+        private Entity GetParent(int elementIndex) => Elements[GetParentIndex(elementIndex)];
     }
 }

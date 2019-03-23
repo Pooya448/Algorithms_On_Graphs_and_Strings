@@ -49,6 +49,7 @@
     <Compile Include="Q3ComputeDistance.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Plain.cs" />
+    <Compile Include="Roads.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\TestCommon\TestCommon.csproj">
