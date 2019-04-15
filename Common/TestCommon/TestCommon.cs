@@ -308,7 +308,7 @@ namespace TestCommon
         public static string Process(string inStr, Func<string, string, long[]> processor)
         {
             var toks = inStr.Split(NewLineChars, StringSplitOptions.RemoveEmptyEntries);
-            return string.Join(" ", processor(toks[0], toks[1]));
+            return string.Join("\n", processor(toks[0], toks[1]));
         }
 
         public static string Process(string inStr, Func<long, string[], string[]> processor)
