@@ -13,9 +13,10 @@ namespace A7.Tests
     [TestClass()]
     public class GradedTests
     {
-        [TestMethod(),Timeout(1000)]
+        [TestMethod(), Timeout(1000)]
         public void SolveTest_Q1()
         {
+            //Assert.Inconclusive("Not Solved");
             RunTest(new Q1FindAllOccur("TD1"));
         }
 
@@ -30,7 +31,7 @@ namespace A7.Tests
         public void SolveTest_Q3()
         {
             Assert.Inconclusive("Not Solved");
-            RunTest(new Q2CunstructSuffixArray("TD2"));
+            RunTest(new Q3PatternMatchingSuffixArray("TD2"));
         }
 
         private void RunTest(Processor p)
