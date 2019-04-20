@@ -26,18 +26,11 @@ namespace A7
             {
                 var res = s.Search(pattern);
                 foreach (var index in res)
-                {
                     if (!results.Contains(index))
-                    {
                         results.Add(index);
-                    }
-                    
-                }
             }
             if (!results.Any())
-            {
                 return new long[] { -1 };
-            }
             return results.ToArray();
         }
     }
