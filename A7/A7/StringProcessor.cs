@@ -17,7 +17,7 @@ namespace A7
             StringInstance = str;
             Pattern = pattern;
         }
-        public long[] FindOccurrences()
+        public long[] KnuthMorrisPratt ()
         {
             List<long> res = new List<long>();
             PatternCursor = 0;

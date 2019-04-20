@@ -16,22 +16,19 @@ namespace A7.Tests
         [TestMethod(), Timeout(1000)]
         public void SolveTest_Q1()
         {
-            //Assert.Inconclusive("Not Solved");
             RunTest(new Q1FindAllOccur("TD1"));
         }
 
         [TestMethod(), Timeout(1000)]
         public void SolveTest_Q2()
         {
-            Assert.Inconclusive("Not Solved");
             RunTest(new Q2CunstructSuffixArray("TD2"));
         }
 
-        [TestMethod(), Timeout(1000)]
+        [TestMethod()]
         public void SolveTest_Q3()
         {
-            Assert.Inconclusive("Not Solved");
-            RunTest(new Q3PatternMatchingSuffixArray("TD2"));
+            RunTest(new Q3PatternMatchingSuffixArray("TD3"));
         }
 
         private void RunTest(Processor p)

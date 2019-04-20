@@ -15,12 +15,30 @@ namespace A7
         }
 
         public override string Process(string inStr) =>
-        TestTools.Process(inStr, (Func<String, long, string[], long[]>)Solve);
+        TestTools.Process(inStr, (Func<String, long, string[], long[]>)Solve,"\n");
 
-        private long[] Solve(string text, long n, string[] patterns)
+        public long[] Solve(string text, long n, string[] patterns)
         {
-            // write your code here
-            throw new NotImplementedException();
+            List<long> results = new List<long>();
+            SuffixArray s = new SuffixArray(text + '$');
+            var suffixarray = s.ConstructSuffixArray();
+            foreach (var pattern in patterns)
+            {
+                var res = s.Search(pattern);
+                foreach (var index in res)
+                {
+                    if (!results.Contains(index))
+                    {
+                        results.Add(index);
+                    }
+                    
+                }
+            }
+            if (!results.Any())
+            {
+                return new long[] { -1 };
+            }
+            return results.ToArray();
         }
     }
 }

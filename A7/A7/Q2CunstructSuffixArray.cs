@@ -18,8 +18,8 @@ namespace A7
 
         private long[] Solve(string text)
         {
-            // write your code here        
-            throw new NotImplementedException();
+            var suffixArray = new SuffixArray(text);
+            return suffixArray.ConstructSuffixArray().Select(x => (long)x).ToArray();
         }
     }
 }

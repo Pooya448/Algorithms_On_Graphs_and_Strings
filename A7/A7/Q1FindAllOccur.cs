@@ -20,7 +20,7 @@ namespace A7
         public long[] Solve(string text, string pattern)
         {
             StringProcessor s = new StringProcessor(text, pattern);
-            return s.FindOccurrences();
+            return s.KnuthMorrisPratt();
 
         }
     }
