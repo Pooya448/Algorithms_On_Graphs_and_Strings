@@ -14,17 +14,11 @@ namespace Exam1
         public int Id { get; set; }
         public bool Check { get; set; }
         public int SccId { get; set; }
-        public int PostVisit { get; set; }
-        public int PreVisit { get; set; }
-        public int Depth { get; set; }
         public int Centrality { get; set; }
-        public bool? Color { get; set; }
         public Vertex(int id)
         {
             Centrality = 0;
             Id = id;
-            Depth = 2000000;
-            Color = null;
             ConnectedVertices = new List<Vertex>();
             ConnectedToVertices = new List<Vertex>();
             return;
