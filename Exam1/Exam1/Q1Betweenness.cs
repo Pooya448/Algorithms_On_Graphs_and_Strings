@@ -21,7 +21,7 @@ namespace Exam1
         public long[] Solve(long NodeCount, long[][] edges)
         {
             Graph gr = new Graph(NodeCount, edges, true);
-             return gr.FindCentrality();
+            return gr.FindCentrality();
         }
     }
 }

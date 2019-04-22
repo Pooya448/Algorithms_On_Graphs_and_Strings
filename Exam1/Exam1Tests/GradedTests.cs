@@ -16,15 +16,15 @@ namespace Exam1.Tests
         [DeploymentItem("TestData", "Exam1_TestData")]
         public void SolveQ1BetweennessTest()
         {
-            Assert.Inconclusive();
-            //Processor p = new Q1Betweenness("TD1");
-            //TestTools.RunLocalTest("Exam1",
-            //    p.Process,
-            //    p.TestDataName,
-            //    p.Verifier,
-            //    false,
-            //    excludedTestCases: p.ExcludedTestCases
-            //    );
+            //Assert.Inconclusive();
+            Processor p = new Q1Betweenness("TD1");
+            TestTools.RunLocalTest("Exam1",
+                p.Process,
+                p.TestDataName,
+                p.Verifier,
+                false,
+                excludedTestCases: p.ExcludedTestCases
+                );
         }
 
         [TestMethod(), Timeout(1000)]

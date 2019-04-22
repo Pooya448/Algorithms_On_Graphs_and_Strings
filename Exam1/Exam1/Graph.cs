@@ -23,7 +23,7 @@ namespace Exam1
         {
             Centrality = 0;
             Id = id;
-            Depth = int.MaxValue;
+            Depth = 2000000;
             Color = null;
             ConnectedVertices = new List<Vertex>();
             ConnectedToVertices = new List<Vertex>();
@@ -55,85 +55,52 @@ namespace Exam1
                     Vertices[(int)edges[i][0] - 1].ConnectedVertices.Add(Vertices[(int)edges[i][1] - 1]);
                     Vertices[(int)edges[i][1] - 1].ConnectedVertices.Add(Vertices[(int)edges[i][0] - 1]);
                 }
+            for (int i = 0; i < Vertices.Count; i++)
+            {
+                Vertices[i].ConnectedVertices = Vertices[i].ConnectedVertices.OrderByDescending(x => x.Id).ToList();
+            }
             return;
         }
         public long[] FindCentrality()
         {
             List<long> res = new List<long>();
             for (int i = 0; i < Vertices.Count; i++)
-            {
                 for (int j = 0; j < Vertices.Count; j++)
-                {
                     FindShortestPath(i, j);
-                }
-            }
             foreach (var v in Vertices)
-            {
                 res.Add(v.Centrality);
-            }
-            return res.OrderByDescending(x => x).ToArray();
+            return res.ToArray();
         }
         public void FindShortestPath(int start, int end)
         {
-            Queue<Vertex> bfsQueue = new Queue<Vertex>();
-            Vertex startVertex = Vertices[start];
-            Vertex target = Vertices[end];
-            if (startVertex == target)
-                return;
-            startVertex.Check = true;
-            startVertex.Depth = 0;
-            bfsQueue.Enqueue(startVertex);
-            while (bfsQueue.Any())
+            Queue<Vertex> q = new Queue<Vertex>();
+            q.Enqueue(Vertices[start]);
+            while (q.Any())
             {
-                var temp = bfsQueue.Dequeue();
-                if (temp == target)
-                {
+                var temp = q.Dequeue();
+                if (temp == Vertices[end])
                     break;
-                }
                 temp.Check = true;
-                foreach (var item in temp.ConnectedVertices)
-                    if (!item.Check)
+                foreach (var v in temp.ConnectedVertices)
+                    if (!v.Check && v.Prev == null)
                     {
-                        if (temp.Depth + 1 < item.Depth)
-                        {
-                            item.Depth = temp.Depth + 1;
-                            item.Prev = temp;
-                        }
-                        bfsQueue.Enqueue(item);
+                        q.Enqueue(v);
+                        v.Prev = temp;
                     }
             }
-            if (target.Depth == int.MaxValue || target.Depth < 2)
-            {
-                Reset();
-                return;
-            }
-            Reconstruct(target, startVertex);
+            Reconstruct(Vertices[end],Vertices[start]);
             Reset();
             return;
         }
-        public void Reconstruct(Vertex s,Vertex t)
+        public void Reconstruct(Vertex s, Vertex t)
         {
-            Vertex pivot = s;
-            while (pivot != t)
+            var pivot = s.Prev;
+            if (s.Prev == null)
+                return;
+            while (pivot.Id != t.Id)
             {
-                if (pivot.Prev != null)
-                {
-                    if (pivot.Prev.Prev != null)
-                    {
-                        pivot.Prev.Centrality++;
-                        var temp = pivot.Prev;
-                        pivot = temp;
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-                else
-                {
-                    return;
-                }
-                
+                pivot.Centrality++;
+                pivot = pivot.Prev;
             }
         }
         
@@ -141,7 +108,6 @@ namespace Exam1
         {
             foreach (var item in Vertices)
             {
-                item.Depth = 0;
                 item.Check = false;
                 item.Prev = null;
             }
