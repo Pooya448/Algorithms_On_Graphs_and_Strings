@@ -11,8 +11,47 @@ namespace TestCommon
     {
         public static readonly char[] IgnoreChars = new char[] { '\n', '\r', ' ' };
         public static readonly char[] NewLineChars = new char[] { '\n', '\r' };
-		
-		public static string Process(string inStr, Func<string, long[]> solve)
+
+        public static string Process(string inStr, Func<long, long, long[][], long[]> solve)
+        {
+            var lines = inStr.Split(NewLineChars, StringSplitOptions.RemoveEmptyEntries);
+            long rowCount, colCount;
+            ParseTwoNumbers(lines[0], out rowCount, out colCount);
+            long[][] matrix = ReadTree(lines.Skip(1));
+
+            return string.Join(" ", solve(rowCount, colCount, matrix));
+        }
+
+        public static string Process(string inStr, Func<long, long, long[][], long> solve)
+        {
+            var lines = inStr.Split(NewLineChars, StringSplitOptions.RemoveEmptyEntries);
+            long nodeCount, edgeCount;
+            ParseTwoNumbers(lines[0], out nodeCount, out edgeCount);
+            long[][] edges = ReadTree(lines.Skip(1));
+
+            return solve(nodeCount, edgeCount, edges).ToString();
+        }
+
+        private const string Space = " ";
+
+        public static string Process(string inStr, Func<string, long[], long[], string[]> solve, string outDelim = Space)
+        {
+            var toks = inStr.Split(IgnoreChars, StringSplitOptions.RemoveEmptyEntries);
+            var text = toks[0];
+            long[] sa = new long[text.Length];
+            for(int i = 1; i <= text.Length; i++)
+            {
+                sa[i - 1] = long.Parse(toks[i]);
+            }
+            long[] lcp = new long[text.Length - 1];
+            for (int i = text.Length + 1; i < toks.Length; i++)
+            {
+                lcp[i - 1 - text.Length] = long.Parse(toks[i]);
+            }
+            return string.Join(outDelim, solve(text, sa, lcp));
+        }
+
+        public static string Process(string inStr, Func<string, long[]> solve)
         {
             var str = inStr.Trim(IgnoreChars);
             return string.Join(" ", solve(str));
@@ -36,14 +75,16 @@ namespace TestCommon
             return string.Join("\n", solve(inStr.Trim(IgnoreChars)));
         }
 
-        public static string Process(string inStr, Func<string, long, string[], long[]> solve)
+        public static string Process(string inStr, 
+            Func<string, long, string[], long[]> solve,
+            string outDelim = Space)
         {
             var toks = inStr.Split(NewLineChars, StringSplitOptions.RemoveEmptyEntries);
             var str1 = toks[0];
             long cnt = long.Parse(toks[1]);
             var strList = toks.Skip(2).ToArray();
 
-            return string.Join(" ", solve(str1, cnt, strList));
+            return string.Join(outDelim, solve(str1, cnt, strList));
         }
 
         public static void RunLocalTest(
@@ -168,7 +209,7 @@ namespace TestCommon
             Assert.AreEqual(expectedResult, testResult, $"TestCase:{Path.GetFileName(inputFileName)}");
         }
 
-        private static int FileNumber(string fileName)
+        public static int FileNumber(string fileName)
         {
             int start = fileName.LastIndexOf('_');
             int end = fileName.LastIndexOf('.');
@@ -305,10 +346,14 @@ namespace TestCommon
                  ).ToArray();
         }
 
-        public static string Process(string inStr, Func<string, string, long[]> processor)
+
+        public static string Process(
+            string inStr, 
+            Func<string, string, long[]> processor,
+            string outDelim = Space)
         {
             var toks = inStr.Split(NewLineChars, StringSplitOptions.RemoveEmptyEntries);
-            return string.Join(" ", processor(toks[0], toks[1]));
+            return string.Join(outDelim, processor(toks[0], toks[1]));
         }
 
         public static string Process(string inStr, Func<long, string[], string[]> processor)
