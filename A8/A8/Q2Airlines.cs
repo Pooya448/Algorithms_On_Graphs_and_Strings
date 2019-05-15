@@ -18,7 +18,8 @@ namespace A8
 
         public virtual long[] Solve(long flightCount, long crewCount, long[][] info)
         {
-            return new long[] { 0 }; 
+            ResidualNetwork rn = new ResidualNetwork((int)flightCount, (int)crewCount, info, true);
+            return rn.FindBipartite();
         }
 
   }
