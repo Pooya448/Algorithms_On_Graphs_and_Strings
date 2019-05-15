@@ -36,6 +36,30 @@ namespace A8
 
             for (int i = N + 1; i <= N + M; i++)
                 AdjacencyMatrix[i, N + M + 1] = 1;
+            return;
+        }
+        public ResidualNetwork(int n, int m, int[,] edges)
+        {
+            M = m;
+            N = n;
+            NodeCount = n + m + 2;
+            MaxFlow = 0;
+            AdjacencyMatrix = new int[NodeCount, NodeCount];
+            IsChecked = new bool[NodeCount];
+            Prevs = new int[NodeCount];
+            Prevs = Enumerable.Repeat(-1, NodeCount).ToArray();
+
+            for (int i = 0; i < edges.GetLength(0); i++)
+                for (int j = 0; j < edges.GetLength(1); j++)
+                    if (edges[i,j] == 1)
+                        AdjacencyMatrix[i + 1, j + N + 1] = 1;
+
+            for (int i = 1; i <= N; i++)
+                AdjacencyMatrix[0, i] = 1;
+
+            for (int i = N + 1; i <= N + M; i++)
+                AdjacencyMatrix[i, N + M + 1] = 1;
+            return;
         }
         public ResidualNetwork(long nodeCount, long[][] edges)
         {
@@ -53,7 +77,6 @@ namespace A8
         {
             long[] result = new long[N];
             result = Enumerable.Repeat((long)-1, N).ToArray();
-
             FindMaxFlow();
 
             for (int i = N + 1; i <= N + M; i++)
@@ -121,6 +144,7 @@ namespace A8
                 IsChecked[i] = false;
             for (int i = 0; i < Prevs.Length; i++)
                 Prevs[i] = -1;
+            return;
         }
     }
 }

@@ -17,7 +17,8 @@ namespace A8
 
         public virtual long Solve(long stockCount, long pointCount, long[][] matrix)
         {
-            return 0;
+            Charts c = new Charts(stockCount, pointCount, matrix);
+            return c.NumberOfSheets();
         }
     }
 }
