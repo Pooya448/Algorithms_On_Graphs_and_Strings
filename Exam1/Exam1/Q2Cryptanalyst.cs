@@ -23,8 +23,6 @@ namespace Exam1
             bool f1 = false;
             bool f2 = false;
             bool f3 = false;
-            bool f4 = false;
-
             int i;
 
             int matchCounter = 0;
@@ -33,10 +31,6 @@ namespace Exam1
                 if (i == 100)
                 {
                     f1 = true;
-                }
-                if (i == 200)
-                {
-                    f4 = true;
                 }
                 if (i == 320)
                 {
