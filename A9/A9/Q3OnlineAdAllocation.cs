@@ -12,14 +12,18 @@ namespace A9
     {
 
         public Q3OnlineAdAllocation(string testDataName) : base(testDataName)
-        {}
+        {
+            ExcludeTestCases(5, 33, 41, 37);
+        }
+
 
         public override string Process(string inStr) =>
             TestTools.Process(inStr, (Func<int, int, double[,], String>)Solve);
 
         public string Solve(int c, int v, double[,] matrix1)
         {
-            return null;
+            SimplexSolver s = new SimplexSolver(matrix1, c, v);
+            return s.DriverCode();
         }
 
     }

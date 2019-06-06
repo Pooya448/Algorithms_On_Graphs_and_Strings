@@ -16,7 +16,8 @@ namespace A9
 
         public string Solve(int N,int M, double[,] matrix1)
         {
-            return null;
+            SimplexSolver s = new SimplexSolver(matrix1, N, M);
+            return s.DriverCode();
         }
 
     }

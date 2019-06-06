@@ -46,6 +46,7 @@
     <Compile Include="Q1InferEnergyValues.cs" />
     <Compile Include="Q2OptimalDiet.cs" />
     <Compile Include="Q3OnlineAdAllocation.cs" />
+    <Compile Include="SimplexSolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\TestCommon\TestCommon.csproj">

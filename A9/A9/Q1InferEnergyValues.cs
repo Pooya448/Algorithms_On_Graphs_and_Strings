@@ -17,7 +17,6 @@ namespace A9
         {
             EquationSolver s = new EquationSolver(matrix, (int)MATRIX_SIZE);
             return s.GaussianElimination();
-            
         }    
      }
 }
