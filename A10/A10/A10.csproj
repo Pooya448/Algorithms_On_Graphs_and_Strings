@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{651ADA0F-E76D-498F-A966-4E79DF4A39E1}</ProjectGuid>
+    <ProjectGuid>{D8CE501D-796A-4145-A9B2-D0EBBF07717E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>A10</RootNamespace>
@@ -59,13 +59,13 @@
     <Compile Include="Q3AdBudgetAllocation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Common\TestCommon\TestCommon.csproj">
       <Project>{c39ff0c4-6960-42ad-8e2c-d2cafe850a52}</Project>
       <Name>TestCommon</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
