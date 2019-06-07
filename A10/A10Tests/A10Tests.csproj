@@ -467,96 +467,276 @@
     <Content Include="TestData\TD2\Out_9.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestData\TD3\In_1.txt" />
-    <Content Include="TestData\TD3\In_10.txt" />
-    <Content Include="TestData\TD3\In_11.txt" />
-    <Content Include="TestData\TD3\In_12.txt" />
-    <Content Include="TestData\TD3\In_13.txt" />
-    <Content Include="TestData\TD3\In_14.txt" />
-    <Content Include="TestData\TD3\In_15.txt" />
-    <Content Include="TestData\TD3\In_16.txt" />
-    <Content Include="TestData\TD3\In_17.txt" />
-    <Content Include="TestData\TD3\In_18.txt" />
-    <Content Include="TestData\TD3\In_19.txt" />
-    <Content Include="TestData\TD3\In_2.txt" />
-    <Content Include="TestData\TD3\In_20.txt" />
-    <Content Include="TestData\TD3\In_21.txt" />
-    <Content Include="TestData\TD3\In_22.txt" />
-    <Content Include="TestData\TD3\In_23.txt" />
-    <Content Include="TestData\TD3\In_24.txt" />
-    <Content Include="TestData\TD3\In_25.txt" />
-    <Content Include="TestData\TD3\In_26.txt" />
-    <Content Include="TestData\TD3\In_27.txt" />
-    <Content Include="TestData\TD3\In_28.txt" />
-    <Content Include="TestData\TD3\In_29.txt" />
-    <Content Include="TestData\TD3\In_3.txt" />
-    <Content Include="TestData\TD3\In_30.txt" />
-    <Content Include="TestData\TD3\In_31.txt" />
-    <Content Include="TestData\TD3\In_32.txt" />
-    <Content Include="TestData\TD3\In_33.txt" />
-    <Content Include="TestData\TD3\In_34.txt" />
-    <Content Include="TestData\TD3\In_35.txt" />
-    <Content Include="TestData\TD3\In_36.txt" />
-    <Content Include="TestData\TD3\In_37.txt" />
-    <Content Include="TestData\TD3\In_38.txt" />
-    <Content Include="TestData\TD3\In_39.txt" />
-    <Content Include="TestData\TD3\In_4.txt" />
-    <Content Include="TestData\TD3\In_40.txt" />
-    <Content Include="TestData\TD3\In_41.txt" />
-    <Content Include="TestData\TD3\In_42.txt" />
-    <Content Include="TestData\TD3\In_43.txt" />
-    <Content Include="TestData\TD3\In_44.txt" />
-    <Content Include="TestData\TD3\In_45.txt" />
-    <Content Include="TestData\TD3\In_5.txt" />
-    <Content Include="TestData\TD3\In_6.txt" />
-    <Content Include="TestData\TD3\In_7.txt" />
-    <Content Include="TestData\TD3\In_8.txt" />
-    <Content Include="TestData\TD3\In_9.txt" />
-    <Content Include="TestData\TD3\Out_1.txt" />
-    <Content Include="TestData\TD3\Out_10.txt" />
-    <Content Include="TestData\TD3\Out_11.txt" />
-    <Content Include="TestData\TD3\Out_12.txt" />
-    <Content Include="TestData\TD3\Out_13.txt" />
-    <Content Include="TestData\TD3\Out_14.txt" />
-    <Content Include="TestData\TD3\Out_15.txt" />
-    <Content Include="TestData\TD3\Out_16.txt" />
-    <Content Include="TestData\TD3\Out_17.txt" />
-    <Content Include="TestData\TD3\Out_18.txt" />
-    <Content Include="TestData\TD3\Out_19.txt" />
-    <Content Include="TestData\TD3\Out_2.txt" />
-    <Content Include="TestData\TD3\Out_20.txt" />
-    <Content Include="TestData\TD3\Out_21.txt" />
-    <Content Include="TestData\TD3\Out_22.txt" />
-    <Content Include="TestData\TD3\Out_23.txt" />
-    <Content Include="TestData\TD3\Out_24.txt" />
-    <Content Include="TestData\TD3\Out_25.txt" />
-    <Content Include="TestData\TD3\Out_26.txt" />
-    <Content Include="TestData\TD3\Out_27.txt" />
-    <Content Include="TestData\TD3\Out_28.txt" />
-    <Content Include="TestData\TD3\Out_29.txt" />
-    <Content Include="TestData\TD3\Out_3.txt" />
-    <Content Include="TestData\TD3\Out_30.txt" />
-    <Content Include="TestData\TD3\Out_31.txt" />
-    <Content Include="TestData\TD3\Out_32.txt" />
-    <Content Include="TestData\TD3\Out_33.txt" />
-    <Content Include="TestData\TD3\Out_34.txt" />
-    <Content Include="TestData\TD3\Out_35.txt" />
-    <Content Include="TestData\TD3\Out_36.txt" />
-    <Content Include="TestData\TD3\Out_37.txt" />
-    <Content Include="TestData\TD3\Out_38.txt" />
-    <Content Include="TestData\TD3\Out_39.txt" />
-    <Content Include="TestData\TD3\Out_4.txt" />
-    <Content Include="TestData\TD3\Out_40.txt" />
-    <Content Include="TestData\TD3\Out_41.txt" />
-    <Content Include="TestData\TD3\Out_42.txt" />
-    <Content Include="TestData\TD3\Out_43.txt" />
-    <Content Include="TestData\TD3\Out_44.txt" />
-    <Content Include="TestData\TD3\Out_45.txt" />
-    <Content Include="TestData\TD3\Out_5.txt" />
-    <Content Include="TestData\TD3\Out_6.txt" />
-    <Content Include="TestData\TD3\Out_7.txt" />
-    <Content Include="TestData\TD3\Out_8.txt" />
-    <Content Include="TestData\TD3\Out_9.txt" />
+    <Content Include="TestData\TD3\In_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_12.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_13.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_14.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_15.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_16.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_17.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_18.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_19.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_20.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_21.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_22.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_23.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_24.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_25.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_26.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_27.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_28.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_30.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_31.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_32.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_33.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_34.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_35.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_36.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_37.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_38.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_39.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_40.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_41.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_42.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_43.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_44.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_45.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\In_9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_12.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_13.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_14.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_15.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_16.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_17.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_18.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_19.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_20.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_21.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_22.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_23.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_24.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_25.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_26.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_27.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_28.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_29.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_30.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_31.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_32.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_33.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_34.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_35.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_36.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_37.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_38.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_39.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_40.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_41.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_42.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_43.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_44.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_45.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\TD3\Out_9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\TestCommon\TestCommon.csproj">

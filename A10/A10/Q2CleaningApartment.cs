@@ -20,6 +20,7 @@ namespace A3
         {
             List<string> result = new List<string>();
             var variables = V * V;
+
             for (int v = 1; v <= V; v++)
             {
                 StringBuilder s = new StringBuilder();
@@ -32,6 +33,7 @@ namespace A3
                     for (int j = i + 1; j <= (v - 1) * V + V; j++)
                         result.Add($"-{i} -{j} 0");
             }
+
             for (int i = 1; i <= V; i++)
             {
                 StringBuilder t = new StringBuilder();
@@ -40,16 +42,19 @@ namespace A3
                 t.Append("0");
                 result.Add(t.ToString());
             }
+
             for (int i = 1; i <= V; i++)
                 for (int j = i; j <= V * V; j += V)
                     for (int k = j + V; k <= V * V; k += V)
                         result.Add($"-{j} -{k} 0");
+
             var adjacencyMatrix = MatrixMaker(matrix, V);
             for (int i = 0; i < adjacencyMatrix.GetLength(0); i++)
                 for (int j = 0; j < adjacencyMatrix.GetLength(1); j++)
                     if (adjacencyMatrix[i,j] == 0 && i != j)
                         for (int k = 1; k < V; k++)
                             result.Add($"-{(i * V) + k} -{(j * V) + k + 1} 0");
+
             var constraints = result.Count;
             result.Insert(0, $"{variables} {constraints}");
             return result.ToArray();
