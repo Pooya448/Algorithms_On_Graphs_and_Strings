@@ -23,10 +23,10 @@ namespace Exam2
             int resultsCount = 0;
             StringBuilder strResults = new StringBuilder();
             int n = square.GetLength(0);
-            int spaces = n * n;
-            int variables = n * n * n;
+            int n2 = n * n;
+            int n3 = n * n * n;
             StringBuilder strBuilder;
-            for (int i = 0; i < spaces; i++)
+            for (int i = 0; i < n2; i++)
             {
                 strBuilder = new StringBuilder();
                 for (int j = 1; j <= n; j++)
@@ -34,7 +34,6 @@ namespace Exam2
                     strBuilder.Append($"{i * n + j} ");
                     resultsCount++;
                 }
-                //strBuilder.Remove(strBuilder.Length - 1, 1);
                 strBuilder.Append("\n");
                 strResults.Append(strBuilder.ToString());
                 resultsCount++;
@@ -47,7 +46,7 @@ namespace Exam2
             }
             
             for (int m = 0; m < n; m++)
-                for (int i = m * spaces + 1; i <= m * spaces + n; i++)
+                for (int i = m * n2 + 1; i <= m * n2 + n; i++)
                 {
                     strBuilder = new StringBuilder();
                     for (int k = i; k <= n * n * (m + 1); k += n)
@@ -86,7 +85,7 @@ namespace Exam2
                         strResults.Append($"{x * n + square[i, j].Value + 1} \n");
                         resultsCount++;
                     }
-            strResults.Insert(0, $"{resultsCount} {variables}\n");
+            strResults.Insert(0, $"{resultsCount} {n3}\n");
             return strResults.ToString();
         }
     }
