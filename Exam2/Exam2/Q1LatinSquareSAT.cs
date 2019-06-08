@@ -20,7 +20,74 @@ namespace Exam2
 
         public string Solve(int dim, int?[,] square)
         {
-            throw new NotImplementedException();
+            int resultsCount = 0;
+            StringBuilder strResults = new StringBuilder();
+            int n = square.GetLength(0);
+            int spaces = n * n;
+            int variables = n * n * n;
+            StringBuilder strBuilder;
+            for (int i = 0; i < spaces; i++)
+            {
+                strBuilder = new StringBuilder();
+                for (int j = 1; j <= n; j++)
+                {
+                    strBuilder.Append($"{i * n + j} ");
+                    resultsCount++;
+                }
+                //strBuilder.Remove(strBuilder.Length - 1, 1);
+                strBuilder.Append("\n");
+                strResults.Append(strBuilder.ToString());
+                resultsCount++;
+                for (int j = 1; j <= n; j++)
+                    for (int k = j + 1; k <= n; k++)
+                    {
+                        strResults.Append($"-{i * n + j} -{i * n + k}\n");
+                        resultsCount++;
+                    }
+            }
+            
+            for (int m = 0; m < n; m++)
+                for (int i = m * spaces + 1; i <= m * spaces + n; i++)
+                {
+                    strBuilder = new StringBuilder();
+                    for (int k = i; k <= n * n * (m + 1); k += n)
+                    {
+                        strBuilder.Append($"{k} ");
+                        for (int j = k + n; j <= n * n * (m + 1); j += n)
+                        {
+                            strResults.Append($"-{k} -{j}\n");
+                            resultsCount++;
+                        }
+                    }
+                    strResults.Append(strBuilder.ToString() + "\n");
+                    resultsCount++;
+                }
+            for (int m = 0; m < n; m++)
+                for (int i = m * n + 1; i <= m * n + n; i++)
+                {
+                    strBuilder = new StringBuilder();
+                    for (int k = i; k <= n * n * n; k += n * n)
+                    {
+                        strBuilder.Append($"{k} ");
+                        for (int j = k + n * n; j <= n * n * n; j += n * n)
+                        {
+                            strResults.Append($"-{k} -{j}\n");
+                            resultsCount++;
+                        }
+                    }
+                    strResults.Append(strBuilder.ToString() + "\n");
+                    resultsCount++;
+                }
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    if (square[i, j].HasValue)
+                    {
+                        var x = i * n + j;
+                        strResults.Append($"{x * n + square[i, j].Value + 1} \n");
+                        resultsCount++;
+                    }
+            strResults.Insert(0, $"{resultsCount} {variables}\n");
+            return strResults.ToString();
         }
     }
 }
