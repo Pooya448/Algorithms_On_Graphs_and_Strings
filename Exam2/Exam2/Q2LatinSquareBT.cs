@@ -39,7 +39,7 @@ namespace Exam2
                 if (x)
                 {
                     var next = Next(dim, i, j, square);
-                    if (next == (-1, -1))
+                    if (next.Item1 == -1 && next.Item2 == -1)
                         return true;
                     if (!Backtracking(dim, square, next.Item1, next.Item2))
                         continue;
